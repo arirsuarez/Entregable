@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Objects;
+
 public abstract class Profesor {
 
     /**
@@ -34,5 +36,20 @@ public abstract class Profesor {
         return codigoDeProfesor;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Profesor profesor = (Profesor) o;
+        return Objects.equals(codigoDeProfesor, profesor.codigoDeProfesor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(codigoDeProfesor);
+    }
+
+       
 
 }
+
